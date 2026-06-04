@@ -1,6 +1,24 @@
 # API reference
 
-## Convenience functions
+OpenTone is a package of schemes. Each submodule has its own page; this page
+covers the top-level DTMF API (re-exported from `opentone` for backwards
+compatibility) and summarises the rest.
+
+## Modules at a glance
+
+| Module | Key functions |
+| --- | --- |
+| `opentone.dtmf` | `encode_text`, `encode_dtmf`, `decode`, `ToneGenerator`, `ToneDecoder` |
+| `opentone.morse` | `text_to_morse`, `morse_to_text`, `encode_text`, `decode` |
+| `opentone.fsk` | `encode(data, path, nsym=0)`, `decode(path, nsym=0)` |
+| `opentone.callerid` | `encode`, `decode`, `build_message`, `parse_message` |
+| `opentone.mf` | `encode(symbols, path)`, `decode(path)`, `MF_SYMBOLS` |
+| `opentone.fec` | `rs_encode(data, nsym)`, `rs_decode(code, nsym)` |
+| `opentone.sstv` | `encode_image`, `decode_image` |
+| `opentone.spectrogram` | `encode_image`, `spectrogram` |
+| `opentone.watermark` | `embed`, `extract` |
+
+## DTMF convenience functions
 
 ```python
 encode_text(text, file_path, duration=100, pause=500) -> str

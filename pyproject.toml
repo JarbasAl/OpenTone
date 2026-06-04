@@ -24,7 +24,12 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-test = ["pytest>=7", "pytest-cov"]
+# Image-based schemes (sstv, spectrogram) need Pillow to read/write images.
+image = ["pillow"]
+# DSP schemes (spectrogram synthesis, echo-hiding watermark) use numpy.
+dsp = ["numpy"]
+all = ["pillow", "numpy"]
+test = ["pytest>=7", "pytest-cov", "pillow", "numpy"]
 
 [project.urls]
 Homepage = "https://github.com/JarbasAl/OpenTone"

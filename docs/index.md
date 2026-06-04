@@ -1,27 +1,34 @@
 # OpenTone
 
-DTMF tone encoding and decoding in pure Python. OpenTone renders text or dial
-strings into dual-tone multi-frequency (DTMF) signals — the touch-tone sounds of
-a telephone keypad — writes them to WAV, and recovers them again with a Goertzel
-detector. It depends only on the standard library.
+A data-over-sound toolkit in pure Python. OpenTone carries data through an audio
+channel using a family of schemes, each in its own submodule and sharing the WAV
+/ synthesis / Goertzel primitives in `opentone._audio`. The core schemes have no
+dependencies; the image and DSP schemes use their optional extras.
 
-## What it does
+## Schemes
 
-- **Encode** ASCII text or a literal DTMF dial string to an 8 kHz mono WAV.
-- **Decode** a WAV back to the original string.
-- Carry arbitrary ASCII by hex-encoding each byte into the `0-9A-F` DTMF
-  alphabet, so any text survives a round trip.
+- [DTMF](encoding.md) — telephone-keypad tones. See also [decoding](decoding.md)
+  and the [DTMF reference](dtmf-reference.md).
+- [Morse](morse.md) — CW on-off keying.
+- [FSK modem](fsk.md) — bytes over Bell 202 frequency-shift keying.
+- [Caller-ID](callerid.md) — Bell 202 SDMF / MDMF messages.
+- [MF signalling](mf.md) — multi-frequency 2-of-6 (R1).
+- [Error correction](fec.md) — Reed-Solomon, shared by the modems.
+- [SSTV](sstv.md) — slow-scan-TV image transmission *(extra: `image`, `dsp`)*.
+- [Spectrogram art](spectrogram.md) — paint an image into the spectrogram
+  *(extra: `image`, `dsp`)*.
+- [Watermarking](watermark.md) — hide data in existing audio *(extra: `dsp`)*.
 
-## Pages
+## Install
 
-- [Quickstart](quickstart.md) — install and a first round trip.
-- [Encoding](encoding.md) — text vs. dial strings, tone timing, output format.
-- [Decoding](decoding.md) — sample rate, detector tuning, noisy input.
-- [DTMF reference](dtmf-reference.md) — the frequency grid and symbol alphabet.
-- [API reference](api-reference.md) — classes and convenience functions.
+```bash
+pip install opentone        # core, no dependencies
+pip install opentone[all]   # + numpy, Pillow for the image/DSP schemes
+```
 
 ## Uses
 
-DTMF is a simple, robust way to move small amounts of data over an audio
-channel: a short URL spoken between two devices, a code played over a phone
-line, or an accessibility cue carried in sound rather than on screen.
+DTMF, Morse, FSK and MF are robust ways to move small amounts of data — or a
+short URL or code — over an audio channel between devices, or as an accessibility
+cue carried in sound. SSTV and spectrogram art carry images; watermarking hides a
+payload inside other audio.
