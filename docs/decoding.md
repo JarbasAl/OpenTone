@@ -30,10 +30,10 @@ ffmpeg -i some_file.mp3 -acodec pcm_s16le -ac 1 -ar 8000 out.wav
 
 Three parameters trade sensitivity against false positives:
 
-- `sample_rate` — must match the WAV.
-- `goertzel_n` — Goertzel block size. Smaller windows react faster to short
-  tones (useful for tight phone recordings); larger windows are more selective.
-- `min_consecutive` — how many identical detections in a row are required before
+- `sample_rate`: must match the WAV.
+- `goertzel_n`: Goertzel block size. Smaller windows react faster to short
+  tones, useful for tight phone recordings. Larger windows are more selective.
+- `min_consecutive`: how many identical detections in a row are required before
   a symbol is accepted. Lower it for short tones, raise it to reject noise.
 
 ```python
@@ -45,7 +45,7 @@ dec = ToneDecoder(sample_rate=8000, goertzel_n=92,
 print(dec.decode_wave("phonecall.wav"))
 ```
 
-Real-world phone audio can decode imperfectly; clean, encoder-generated WAV
+Real-world phone audio can decode imperfectly. Clean, encoder-generated WAV
 round-trips exactly.
 
 ## Telephone E and F
@@ -58,3 +58,6 @@ text = decode("phonecall.wav", sample_rate=8000, goertzel_n=92,
               min_consecutive=3, hex_decode=False)
 text = text.replace("E", "*").replace("F", "#")
 ```
+
+---
+[← Encoding](encoding.md) · [Home](index.md) · [DTMF reference →](dtmf-reference.md)

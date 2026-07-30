@@ -26,3 +26,6 @@ On a physical telephone keypad the bottom row is `*` `0` `#`, plus the `A-D`
 column used for signalling. OpenTone maps the keypad `*` and `#` positions to
 `E` and `F` so the full alphabet stays within `0-9A-F`. See
 [Decoding](decoding.md#telephone-e-and-f) for converting them back.
+
+---
+[← Decoding](decoding.md) · [Home](index.md) · [Morse →](morse.md)

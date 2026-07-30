@@ -26,3 +26,6 @@ morse.decode("hello.wav", wpm=20, freq=700)   # "HELLO WORLD"
 Timing follows the PARIS standard: a dot is `1200 / wpm` milliseconds, a dash
 three dots, the intra-letter gap one dot, the inter-letter gap three, and the
 word gap seven. Decode with the same `wpm` and tone `freq` used to encode.
+
+---
+[← DTMF reference](dtmf-reference.md) · [Home](index.md) · [FSK modem →](fsk.md)
