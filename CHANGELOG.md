@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2a3](https://github.com/TigreGotico/OpenTone/tree/0.1.2a3) (2026-07-30)
+
+[Full Changelog](https://github.com/TigreGotico/OpenTone/compare/0.1.2a2...0.1.2a3)
+
+**Merged pull requests:**
+
+- docs: rewrite README in Simplified Technical English [\#3](https://github.com/TigreGotico/OpenTone/pull/3) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.2a2](https://github.com/TigreGotico/OpenTone/tree/0.1.2a2) (2026-06-04)
 
 [Full Changelog](https://github.com/TigreGotico/OpenTone/compare/13f7dd8d05d5f17ac57c645f666171944b101867...0.1.2a2)
