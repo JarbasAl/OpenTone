@@ -13,9 +13,9 @@ fsk.decode("data.wav")          # b"arbitrary bytes \x00\xff"
 
 ## Frame
 
-A leading run of mark bits lets the receiver find the carrier, a single space
+A leading run of mark bits lets the receiver find the carrier. A single space
 start-bit marks the first data bit, and a two-byte big-endian length header
-delimits the payload — so the decoder needs no manual framing.
+delimits the payload, so the decoder needs no manual framing.
 
 ## Error correction
 
@@ -32,6 +32,9 @@ byte errors. See [error correction](fec.md).
 
 ## Tuning
 
-`baud` trades speed against robustness; `mark` / `space` set the tones; `rate`
-the sample rate. Lower baud means more samples per bit and a more forgiving
-decode.
+`baud` trades speed against noise tolerance. `mark` and `space` set the tones,
+and `rate` sets the sample rate. Lower baud means more samples per bit and a
+more forgiving decode.
+
+---
+[← Morse](morse.md) · [Home](index.md) · [Caller-ID →](callerid.md)

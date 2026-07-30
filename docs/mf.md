@@ -17,3 +17,6 @@ mf.encode("0123456789", "digits.wav")   # a bare digit string also works
 The symbol set (`mf.MF_SYMBOLS`) is the ten digits plus the control symbols
 `KP`, `KP2`, `ST`, `ST2`, `ST3`. Decoding detects each tone with a 2-of-6
 Goertzel detector and maps the strongest frequency pair back to its symbol.
+
+---
+[← Caller-ID](callerid.md) · [Home](index.md) · [Error correction →](fec.md)

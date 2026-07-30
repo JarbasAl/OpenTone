@@ -16,3 +16,6 @@ block with more errors than the parity can correct raises `ReedSolomonError`.
 
 The [FSK modem](fsk.md) wires this in directly via its `nsym` argument, so most
 callers never use `opentone.fec` on its own.
+
+---
+[← MF signalling](mf.md) · [Home](index.md) · [SSTV →](sstv.md)

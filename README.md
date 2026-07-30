@@ -1,9 +1,10 @@
 # OpenTone
 
-A data-over-sound toolkit in pure Python. OpenTone carries data through an audio
-channel using a family of schemes — telephone tones, modems, Morse, image
-transmission, and watermarking — each in its own submodule, sharing one set of
-WAV / synthesis / Goertzel primitives. The core schemes have no dependencies.
+A data-over-sound toolkit in pure Python. OpenTone carries data through an
+audio channel using a family of schemes: telephone tones, modems, Morse, image
+transmission, and watermarking. Each scheme is its own submodule that shares
+one set of WAV, synthesis, and Goertzel primitives. The core schemes have no
+dependencies.
 
 ## Install
 
@@ -16,12 +17,12 @@ pip install opentone[all]       # + image/DSP schemes (numpy, Pillow)
 
 | Module | What it carries | Dependencies |
 | --- | --- | --- |
-| `opentone.dtmf` | Telephone-keypad DTMF tones (text or dial strings) | — |
-| `opentone.morse` | Morse / CW on-off keyed tones | — |
-| `opentone.fsk` | Bytes over a Bell 202 frequency-shift-keying modem | — |
-| `opentone.callerid` | Bell 202 caller-ID (SDMF / MDMF) messages | — |
-| `opentone.mf` | Multi-frequency (R1) 2-of-6 signalling | — |
-| `opentone.fec` | Reed-Solomon error correction (shared by the modems) | — |
+| `opentone.dtmf` | Telephone-keypad DTMF tones (text or dial strings) | none |
+| `opentone.morse` | Morse / CW on-off keyed tones | none |
+| `opentone.fsk` | Bytes over a Bell 202 frequency-shift-keying modem | none |
+| `opentone.callerid` | Bell 202 caller-ID (SDMF / MDMF) messages | none |
+| `opentone.mf` | Multi-frequency (R1) 2-of-6 signalling | none |
+| `opentone.fec` | Reed-Solomon error correction (shared by the modems) | none |
 | `opentone.sstv` | Images over slow-scan-TV-style FM | `numpy`, `Pillow` |
 | `opentone.spectrogram` | An image painted into the audio spectrogram | `numpy`, `Pillow` |
 | `opentone.watermark` | Hidden data inside existing audio | `numpy` |

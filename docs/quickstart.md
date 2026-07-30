@@ -35,3 +35,6 @@ print(decode("dial.wav", hex_decode=False))   # "1234ABCD"
 
 - [Encoding](encoding.md) for tone timing and the output WAV format.
 - [Decoding](decoding.md) for decoding audio from other sources.
+
+---
+[Home](index.md) · [Encoding →](encoding.md)
